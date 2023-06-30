@@ -1,0 +1,16 @@
+<template>
+    <template lwc:if={isLoaded}>
+
+        <!-- Show custom object icon -->
+        <template lwc:if={isCustomObject}>
+            <template lwc:if={iconURL}>
+                <img src={iconURL} class={iconSize} alt={alternativeText}/>
+            </template>
+        </template>
+
+        <!-- Show standard object icon -->
+        <template lwc:else>
+            <lightning-icon icon-name={iconName} size={iconSize} alternative-text={alternativeText} title={title}></lightning-icon>
+        </template>
+    </template>
+</template>
