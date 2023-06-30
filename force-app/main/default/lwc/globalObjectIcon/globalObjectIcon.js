@@ -3,7 +3,7 @@ import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 
 export default class GlobalObjectIcon extends LightningElement {
 
-    @api objectApiName = 'Entitled_Product__c';
+    @api objectApiName;
     @api size = 'medium';
 
     @track objectSchema;
