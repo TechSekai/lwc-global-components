@@ -37,6 +37,12 @@ export default class GlobalObjectIcon extends LightningElement {
         }
     }
 
+    capitalizeFirstLetter(word) {
+        if (typeof word === 'string' && word !== '')
+            return `${word?.slice(0, 1)?.toUpperCase()}${word?.slice(1)}`   
+        return null;
+    }
+
     get isCustomObject() {
         return this.objectSchema?.custom || false;
     }
@@ -50,14 +56,14 @@ export default class GlobalObjectIcon extends LightningElement {
     }
 
     get iconName() {
-        return `standard:${this.objectSchema?.apiName.toLowerCase()}`;
+        return `standard:${this.objectApiName?.toLowerCase()}`;
     }
     
     get alternativeText() {
-        return this.objectSchema?.Label || '';
+        return this.objectSchema?.Label || this.capitalizeFirstLetter(this.objectApiName) || '';
     }
 
     get title() {
-        return this.objectSchema?.Label || '';
+        return this.objectSchema?.Label || this.capitalizeFirstLetter(this.objectApiName) ||'';
     }
 }
