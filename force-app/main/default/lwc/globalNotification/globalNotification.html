@@ -1,0 +1,46 @@
+<template>
+
+    <template lwc:if={show}>
+
+        <!-- Notification container -->
+        <div class="slds-notification-container" data-id="notification-container">
+            <section class="slds-notification" role="dialog">
+                <div class="slds-notification__body">
+                    <a class="slds-notification__target slds-media" href={url}>
+
+                        <!-- Icon -->
+                        <template lwc:if={iconName}>
+                            <div class="slds-media__figure">
+                                <c-global-object-icon object-api-name={iconName} size="small"></c-global-object-icon>
+                            </div>
+                        </template>
+
+                        <!-- Notification body -->
+                        <div class="slds-media__body">    
+                            <!-- Subject -->
+                            <h2 class="slds-text-heading_small slds-m-bottom_xx-small">
+                                {subject}
+                            </h2>
+                            <!-- Title -->
+                            <template lwc:if={title}>
+                                <p>{title}</p>
+                            </template>
+                        </div>
+                    </a>
+
+                    <!--Notification close -->
+                    <div class="slds-notification__close icon-close_margin">
+                        <lightning-button-icon 
+                            icon-name="utility:close" 
+                            variant="bare" size="medium"
+                            alternative-text="Dismiss Notification"
+                            title="Dismiss Notification"
+                            onclick={closeNotification}>
+                        </lightning-button-icon>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+</template>
