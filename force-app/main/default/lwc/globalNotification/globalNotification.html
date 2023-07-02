@@ -3,7 +3,7 @@
     <template lwc:if={show}>
 
         <!-- Notification container -->
-        <div class="slds-notification-container" data-id="notification-container">
+        <div class={computedContainerClassNames} data-id="notification-container">
             <section class="slds-notification" role="dialog">
                 <div class="slds-notification__body">
                     <a class="slds-notification__target slds-media" href={url}>
